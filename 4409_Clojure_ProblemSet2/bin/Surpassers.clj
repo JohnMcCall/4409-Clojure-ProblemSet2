@@ -14,6 +14,9 @@
   (count (filter #(< (int (first coll)) (int %)) (rest coll)))
   )
 
+(defn max-surpasser-count [coll]
+  (apply max (map num-surpassers (generateTails coll)))
+  )
 
 ;; Tests for generateTails
 (is (= '("t" "st" "est" "test") (generateTails "test")))
